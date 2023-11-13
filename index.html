@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Plain JavaScript Effects</title>
+	<link rel="stylesheet" href="demo-styles.css">
+</head>
+<body>
+	<header>
+		<svg class="site-logo" width="40" height="40">
+			<polygon points="10 0, 0 20, 20 40, 35 30, 40 10" />
+		</svg>
+		<span class="site-name">Plain Js Effects</span>
+	</header>
+	<main>
+
+		<h1>Plain Js Effects Demo</h1>
+		<p>Vanilla JavaScript version of some JQuery effects. No jQuery necessary!</p>
+		<p>Includes <code>show()</code>, <code>hide()</code>, <code>toggle()</code>
+			<code>slideToggle()</code>, <code>slideUp()</code> and <code>slideDown()</code>.</p>
+
+		<h2>Accordion Demo</h2>
+		<p><strong>Click the different tabs</strong> to open a panel with more information. The other tabs will close as you open new ones, but you can adjust your own code if you want them to stay open.</p>
+
+		<ul class="accordion">
+			<li>
+				<div class="tab">Accordion Tab One</div>
+				<div class="panel is-open">Description of accordion tab one</div>
+			</li>
+			<li>
+				<div class="tab">Accordion Tab Two</div>
+				<div class="panel">Some information about accordion tab two. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque cum officiis minima illo fuga rem quae rerum veritatis reprehenderit laboriosam similique eos fugiat maiores quia, dolor accusamus, pariatur qui sint?</div>
+			</li>
+			<li>
+				<div class="tab">Accordion Tab Three</div>
+				<div class="panel">
+					Content for accordion tab number three
+				</div>
+			</li>
+		</ul>
+
+		<button class="like-btn">Like It?</button>
+		<p class="count-like">10 likes</p>
+
+	</main>
+	<footer>
+		Created by HungLe in 2023
+	</footer>
+
+	<!-- Include slideToggle.min.js in your project -->
+	<script src="index.js"></script>
+
+	<!-- Then you can call .slideToggle(), .slideUp() and .slideDown() on elements just like in jQuery -->
+	<script>
+
+		// ACCORDION FUNCTIONALITY:
+		document.querySelector('.accordion').addEventListener('click', function(e) {
+			if (e.target.classList.contains('tab')) {
+				var nextPanel = e.target.nextElementSibling;
+				nextPanel.slideToggle(200);
+				// to make other panels collapse when you open one:
+				document.querySelectorAll('.accordion .panel').forEach(function(el) {
+					if (el.style.display !== "none" && el !== nextPanel) { el.slideUp(200); }
+				});
+			}
+		});
+
+		document.querySelector('.like-btn').addEventListener('click', () => {
+			document.querySelector('.count-like').toggle()
+		})
+	</script>
+</body>
+</html>

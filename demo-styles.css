@@ -1,0 +1,83 @@
+/* Header */
+header {
+	position: relative; /* for anchoring .site-navigation */
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 0 0 0 10px;
+	background: white;
+	border-bottom: 1px solid #ddd;
+	height: 64px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Accordion */
+.accordion {
+	list-style: none;
+	margin: 0 auto 2em;
+	padding: 0;
+	border-radius: 8px;
+	border: 1px solid black;
+	overflow: hidden;
+}
+.accordion > li:not(:last-child) {
+	border-bottom: 1px solid black;
+}
+.tab {
+	padding: 1em;
+	background: #eb4;
+	font-weight: bold;
+	text-shadow: 0px 1px 1px white;
+	cursor: pointer;
+}
+.panel {
+	display: none;
+	padding: 1em;
+}
+.panel.is-open {
+	display: block;
+}
+
+/* Other unrelated stuff */
+* {
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font: 18px/1.4 -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+.site-name {
+	padding-left: 1em;
+}
+h1 {
+	font-size: 1.6em;
+	line-height: 1.2;
+}
+.like-btn {
+	margin: 1.5em 0 0;
+	padding: 0.5em 0.75em;
+	font-size: 1.1em;
+	background: black;
+	color: #eb4;
+}
+p {
+	padding-left: 1em;
+}
+code {
+	padding: 5px;
+	background: #ddd;
+	border-radius: 3px;
+	font-size: 0.875em;
+}
+main {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 20px;
+}
+footer {
+	padding: 20px;
+	background: black;
+	color: white;
+	text-align: center;
+	font-size: 12px;
+}
