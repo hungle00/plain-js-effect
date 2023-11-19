@@ -1,4 +1,4 @@
-HTMLElement.prototype.slideToggle = function(duration, callback) {
+HTMLElement.prototype.slideToggle = function(duration) {
   if (window.getComputedStyle(this).display === 'none') {
     _slideDown(this);
   } else {
@@ -6,11 +6,11 @@ HTMLElement.prototype.slideToggle = function(duration, callback) {
   }
 };
 
-HTMLElement.prototype.slideUp = function(duration, callback) {
+HTMLElement.prototype.slideUp = function(duration) {
   _slideUp(this)
 };
 
-HTMLElement.prototype.slideDown = function (duration, callback) {
+HTMLElement.prototype.slideDown = function (duration) {
   _slideDown(this)
 };
 
@@ -29,6 +29,15 @@ HTMLElement.prototype.show = function() {
 HTMLElement.prototype.hide = function() {
   this.style.display = 'none'
 }
+
+HTMLElement.prototype.fadeIn = function(display) {
+  _fadeIn(this, display)
+}
+
+HTMLElement.prototype.fadeOut = function() {
+  _fadeOut(this)
+}
+
 
 function _slideUp(element, duration = 500) {
   const target = element;
@@ -87,3 +96,27 @@ function _slideDown(element, duration = 500) {
 }
 
 
+// ** FADE OUT FUNCTION **
+function _fadeOut(el) {
+  el.style.opacity = 1;
+  (function fade() {
+    if ((el.style.opacity -= .1) < 0) {
+        el.style.display = "none";
+    } else {
+      requestAnimationFrame(fade);
+    }
+  })();
+};
+
+// ** FADE IN FUNCTION **
+function _fadeIn(el, display) {
+  el.style.opacity = 0;
+  el.style.display = display || "block";
+  (function fade() {
+    var val = parseFloat(el.style.opacity);
+    if (!((val += 0.05) > 1)) {
+      el.style.opacity = val;
+      requestAnimationFrame(fade);
+    }
+  })();
+};
