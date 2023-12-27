@@ -11,6 +11,19 @@ document.querySelector('.myDiv').hide();
 
 Check out [the demo page](https://hungle00.github.io/plain-js-effect/).
 
+## Installation
+
+
+Install from npm:
+```
+npm i plain-js-effect
+```
+
+Use a CDN
+```
+<script src="https://cdn.jsdelivr.net/npm/plain-js-effect@1.0.0/index.js"></script>
+```
+
 ## Example Usage
 ```
 <button class="myBtn">Click me</button>

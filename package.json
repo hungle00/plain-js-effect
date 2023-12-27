@@ -1,0 +1,19 @@
+{
+  "name": "plain-js-effect",
+  "version": "1.0.0",
+  "description": "Vanilla JavaScript version of some JQuery effects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hungle00/plain-js-effect.git"
+  },
+  "author": "hungle00",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hungle00/plain-js-effect/issues"
+  },
+  "homepage": "https://github.com/hungle00/plain-js-effect#readme"
+}
